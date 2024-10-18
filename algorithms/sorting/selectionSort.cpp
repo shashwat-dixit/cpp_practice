@@ -2,33 +2,30 @@
 #include <vector>
 
 template <typename T>
-void bubbleSort(std::vector<T> &arr)
+void selectionSort(std::vector<T> &arr)
 {
     int n = arr.size();
     for (int i = 0; i < n - 1; i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        int min_idx = i;
+        for (int j = i + 1; j < n; j++)
         {
-            if (arr[j] > arr[j + 1])
-                std::swap(arr[j], arr[j + 1]);
-            /*
-                int temp = arr [j];
-                arr [j] = arr [j+1];
-                arr[j+1] = temp
-            */
+            if (arr[j] < arr[min_idx])
+                min_idx = j;
         }
+        if (min_idx != i)
+            std::swap(arr[i], arr[min_idx]);
     }
 }
-
 struct Item
 {
     int value;
     char label;
 
     // Overload the > operator for comparison
-    bool operator>(const Item &other) const
+    bool operator<(const Item &other) const
     {
-        return value > other.value;
+        return value < other.value;
     }
 };
 
@@ -63,7 +60,7 @@ int main()
     }
     std::cout << std::endl;
 
-    bubbleSort(largeData);
+    selectionSort(largeData);
 
     std::cout << "Large dataset after sorting:" << std::endl;
     for (int num : largeData)
@@ -76,7 +73,7 @@ int main()
     std::cout << "\nStability dataset before sorting:" << std::endl;
     printItems(stabilityData);
 
-    bubbleSort(stabilityData);
+    selectionSort(stabilityData);
 
     std::cout << "Stability dataset after sorting:" << std::endl;
     printItems(stabilityData);

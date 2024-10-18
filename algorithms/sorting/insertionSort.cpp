@@ -1,22 +1,19 @@
 #include <iostream>
 #include <vector>
-
 template <typename T>
-void bubbleSort(std::vector<T> &arr)
+void insertionSort(std::vector<T> &arr)
 {
     int n = arr.size();
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        T key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key)
         {
-            if (arr[j] > arr[j + 1])
-                std::swap(arr[j], arr[j + 1]);
-            /*
-                int temp = arr [j];
-                arr [j] = arr [j+1];
-                arr[j+1] = temp
-            */
+            arr[j + 1] = arr[j];
+            j--;
         }
+        arr[j + 1] = key;
     }
 }
 
@@ -44,7 +41,6 @@ void printItems(const std::vector<Item> &items)
 
 int main()
 {
-    // Large dataset for general sorting
     std::vector<int> largeData = {
         64, 34, 25, 12, 22, 11, 90, 88, 45, 2,
         37, 5, 76, 23, 71, 13, 55, 17, 39, 30,
@@ -63,7 +59,7 @@ int main()
     }
     std::cout << std::endl;
 
-    bubbleSort(largeData);
+    insertionSort(largeData);
 
     std::cout << "Large dataset after sorting:" << std::endl;
     for (int num : largeData)
@@ -76,7 +72,7 @@ int main()
     std::cout << "\nStability dataset before sorting:" << std::endl;
     printItems(stabilityData);
 
-    bubbleSort(stabilityData);
+    insertionSort(stabilityData);
 
     std::cout << "Stability dataset after sorting:" << std::endl;
     printItems(stabilityData);
