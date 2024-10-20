@@ -1,10 +1,12 @@
 #include <iostream>
+#include <unordered_map>
 
 bool containsDuplicate(int &arr)
 {
+    std::unordered_map<int, int> hashMap;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
 
     return 0;

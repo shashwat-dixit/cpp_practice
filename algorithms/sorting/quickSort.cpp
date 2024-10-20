@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+// implement quicksort 3 way (dutch flag)
+
 int partition(std::vector<int> &arr, int low, int high)
 {
     int pivot = arr[high];
