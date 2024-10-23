@@ -11,4 +11,7 @@ This repository contains my C++ practice code for LeetCode problems and algorith
 - [ ] Quick Sort (Dutch Partition)
 - [ ] Bucket Sort
 - [ ] Radix Sort
+- [ ] Heap Sort
 - [ ] Data Structures Implementation
+- [ ] BFS
+- [ ] DFS
