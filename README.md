@@ -12,6 +12,15 @@ This repository contains my C++ practice code for LeetCode problems and algorith
 - [ ] Bucket Sort
 - [ ] Radix Sort
 - [ ] Heap Sort
-- [ ] Data Structures Implementation
 - [ ] BFS
 - [ ] DFS
+- [ ] Trees
+- [ ] Monotonic Stack
+- [ ] Linkedn List based Stack Implementation
+- [ ] Ring Buffers
+- [ ] Queues
+- [ ] Heads
+
+## Realistic Problems (Encountered on Blogs etc)
+
+- [ ] Async Request Queue using LinkedList & Arrays

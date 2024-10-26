@@ -1,3 +1,4 @@
+// equivalent to an ArrayList in JS
 #include <iostream>
 #include <stdexcept>
 
@@ -8,7 +9,6 @@ private:
     T *data;
     size_t capacity;
     size_t length;
-
     void resize(size_t newCapacity)
     {
     }
