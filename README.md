@@ -19,8 +19,8 @@ This repository contains my C++ practice code for LeetCode problems and algorith
 - [ ] Linkedn List based Stack Implementation
 - [ ] Arrays
 - [ ] Ring Buffers
-- [ ] Queues
-- [ ] Heaps
+- [x] Queues
+- [x] Heaps
 
 ## Realistic Problems (Encountered on Blogs etc)
 

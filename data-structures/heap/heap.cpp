@@ -80,7 +80,7 @@ public:
     }
 };
 
-class PriorityQueue : public Heap
+class MaxHeap : public Heap
 {
 protected:
     bool compare(int a, int b) const override
@@ -89,29 +89,68 @@ protected:
     }
 
 public:
-    PriorityQueue() {};
+    MaxHeap() {};
 };
+
+class MinHeap : public Heap
+{
+protected:
+    bool compare(int a, int b) const override
+    {
+        return a < b;
+    }
+
+public:
+    MinHeap() {};
+};
+
+void testHeap()
+{
+    std::cout << "Testing Max Heap:\n";
+    MaxHeap maxHeap;
+
+    std::cout << "Inserting: 4, 10, 3, 5, 1\n";
+    maxHeap.push(4);
+    maxHeap.push(10);
+    maxHeap.push(3);
+    maxHeap.push(5);
+    maxHeap.push(1);
+
+    std::cout << "Max Heap array representation: ";
+    maxHeap.print();
+
+    std::cout << "Removing elements from Max Heap:\n";
+    while (!maxHeap.empty())
+    {
+        std::cout << maxHeap.top() << " ";
+        maxHeap.pop();
+    }
+    std::cout << "\n\n";
+
+    std::cout << "Testing Min Heap:\n";
+    MinHeap minHeap;
+
+    std::cout << "Inserting: 4, 10, 3, 5, 1\n";
+    minHeap.push(4);
+    minHeap.push(10);
+    minHeap.push(3);
+    minHeap.push(5);
+    minHeap.push(1);
+
+    std::cout << "Min Heap array representation: ";
+    minHeap.print();
+
+    std::cout << "Removing elements from Min Heap:\n";
+    while (!minHeap.empty())
+    {
+        std::cout << minHeap.top() << " ";
+        minHeap.pop();
+    }
+    std::cout << std::endl;
+}
 
 int main()
 {
-    PriorityQueue pq;
-
-    std::cout << "Inserting elements: 5, 2, 7, 1, 9\n";
-    pq.push(5);
-    pq.push(2);
-    pq.push(7);
-    pq.push(1);
-    pq.push(9);
-    // pq.pop();
-
-    // Test removal and display
-    std::cout << "\nRemoving elements in priority order:\n";
-    while (!pq.empty())
-    {
-        std::cout << pq.top() << " ";
-        pq.pop();
-    }
-    std::cout << "\n";
-
+    testHeap();
     return 0;
 }
